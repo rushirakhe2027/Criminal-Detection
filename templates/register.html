@@ -39,7 +39,7 @@
                         <a class="nav-link active" href="{{ url_for('register') }}">Criminal Registration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('view_records') }}">Search Criminal</a>
+                        <a class="nav-link" href="{{ url_for('view_records') }}">Detect Criminal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#reports">Reports</a>
@@ -101,7 +101,7 @@
                                             <!-- Age and Gender -->
                                             <div class="col-md-6">
                                                 <label for="age" class="form-label">
-                                                    <i class="bi bi-calendar me-2"></i>Age (Manual Input)
+                                                    <i class="bi bi-calendar me-2"></i>Age
                                                 </label>
                                                 <input type="number" 
                                                        class="form-control" 
@@ -111,7 +111,6 @@
                                                        min="1" 
                                                        max="120"
                                                        required>
-                                                <small class="text-muted">AI will detect age from photo</small>
                                             </div>
 
                                             <div class="col-md-6">
@@ -318,14 +317,6 @@
             document.getElementById('imagePreview').src = 'https://images.unsplash.com/photo-1602526216432-7f4a79e2d7bb?w=600&q=80';
         }
 
-        // Add AI detection indicator
-        document.getElementById('image').addEventListener('change', function() {
-            const fileInfo = document.querySelector('.text-muted');
-            if (this.files && this.files[0]) {
-                fileInfo.innerHTML = '<i class="bi bi-robot me-1"></i>AI will analyze this image for age and gender detection';
-                fileInfo.classList.add('text-primary');
-            }
-        });
     </script>
 </body>
 </html>

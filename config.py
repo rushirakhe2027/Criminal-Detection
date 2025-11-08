@@ -16,7 +16,3 @@ class Config:
     UPLOAD_FOLDER = 'static/uploads'
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-    
-    # Face Recognition Configuration
-    FACE_DETECTION_BACKEND = 'opencv'
-    FACE_RECOGNITION_MODEL = 'VGG-Face'

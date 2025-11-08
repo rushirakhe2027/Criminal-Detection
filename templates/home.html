@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Identification Portal - Secure Law Enforcement Platform</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <div class="shield-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                Criminal ID System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Criminal Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('view_records') }}">Search Criminal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reports">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <i class="bi bi-cpu me-2"></i>
+                        Advanced Technology
+                    </div>
+                    <h1 class="hero-title">AI-Driven Criminal Identification</h1>
+                    <p class="hero-subtitle">
+                        Revolutionize law enforcement with cutting-edge artificial intelligence. 
+                        Faster investigations, automated identification, and comprehensive 
+                        centralized records at your fingertips.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap mt-4">
+                        <a href="{{ url_for('register') }}" class="btn btn-primary-custom">
+                            <i class="bi bi-person-plus-fill me-2"></i>
+                            Register Criminal
+                        </a>
+                        <a href="{{ url_for('view_records') }}" class="btn btn-outline-custom">
+                            <i class="bi bi-search me-2"></i>
+                            Identify Criminal
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-illustration">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" 
+                             alt="AI Technology" 
+                             class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Overview Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Transforming Law Enforcement</h2>
+                <p class="section-subtitle">
+                    Experience the future of criminal identification with technology designed for modern law enforcement.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Faster Investigation</h3>
+                        <p class="feature-text">
+                            Reduce identification time from hours to seconds with AI-powered recognition technology and instant database queries.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h3 class="feature-title">Automated Identification</h3>
+                        <p class="feature-text">
+                            Advanced machine learning algorithms automatically match and verify criminal records with 99.7% accuracy.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-database-fill"></i>
+                        </div>
+                        <h3 class="feature-title">Centralized Records</h3>
+                        <p class="feature-text">
+                            Access comprehensive criminal databases from a single, secure platform with real-time synchronization across agencies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Technology Showcase -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" 
+                         alt="AI Technology" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="section-title text-start mb-4">Powered by Artificial Intelligence</h2>
+                    <p class="text-muted mb-4">
+                        Our advanced AI algorithms provide unmatched accuracy and speed in criminal identification, 
+                        helping law enforcement agencies solve cases faster and more efficiently.
+                    </p>
+                    
+                    <div class="d-flex mb-4 align-items-start">
+                        <div class="feature-icon me-3" style="width: 48px; height: 48px; font-size: 1.25rem; flex-shrink: 0;">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Real-Time Updates</h5>
+                            <p class="text-muted mb-0">Instant synchronization across all connected law enforcement agencies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4 align-items-start">
+                        <div class="feature-icon me-3" style="width: 48px; height: 48px; font-size: 1.25rem; flex-shrink: 0;">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Improved Accuracy</h5>
+                            <p class="text-muted mb-0">99.7% recognition accuracy reduces false positives and speeds up justice.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4 align-items-start">
+                        <div class="feature-icon me-3" style="width: 48px; height: 48px; font-size: 1.25rem; flex-shrink: 0;">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Enhanced Security</h5>
+                            <p class="text-muted mb-0">Military-grade encryption ensures data integrity and authorized access only.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Strip -->
+    <section class="info-strip">
+        <div class="container">
+            <h3>Empowering Law Enforcement with Technology</h3>
+            <p>
+                Our Criminal Identification Portal provides law enforcement agencies with a centralized, 
+                secure platform for managing criminal records, enabling faster investigations and improved 
+                public safety through advanced data management and retrieval systems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="shield-icon" style="width: 28px; height: 28px; font-size: 0.875rem;">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        Criminal ID System
+                    </div>
+                    <p class="footer-description">
+                        Advanced AI-driven criminal identification system for modern law enforcement agencies.
+                    </p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('register') }}">Criminal Registration</a></li>
+                        <li><a href="{{ url_for('view_records') }}">Search Criminal</a></li>
+                        <li><a href="#">Reports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            support@criminalid.gov
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone me-2"></i>
+                            +1 (800) 123-4567
+                        </li>
+                        <li>
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Law Enforcement Plaza<br>
+                            Washington, DC 20001
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">© 2024 Criminal Identification System. All rights reserved. | Secured by Military-Grade Encryption</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // Add animation on scroll for feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
